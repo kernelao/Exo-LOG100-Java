@@ -2,6 +2,7 @@ import poo1.*;
 import poo2.*;
 import poo3.*;
 import poo4.*;
+import poo5.*;
 import tableaux.*;
 
 public class Main {
@@ -45,7 +46,9 @@ public class Main {
 
         // EXERCICE - SEMAINE 3
         // Exercice 1 - Gestion d'une bibliothèque
-        exo1smn3();
+        //exo1smn3();
+        // Exercice 2 - Gestionnaire de contacts
+        exo2smn3();
 
     }
 
@@ -166,5 +169,33 @@ public class Main {
 
 
     }
+    public static void exo2smn3() {
 
+        GestionnaireContacts gestionnaireContacts = new GestionnaireContacts();
+        Contact contact1 = new Personne("James", "james@mail.com", 20, "4381234567");
+        Contact contact2 = new Personne("Bob", "bob@mail.com", 27, "4381246577");
+        Contact contact3 = new Entreprise("Macdo", "macdo@mail.com", "Alimentation", "23 rue Macdo");
+        Contact contact4 = new Entreprise("Tim Hortons", "tim@mail.com", "Alimentation", "46 rue Tim");
+
+        gestionnaireContacts.ajouterContact(contact1);
+        gestionnaireContacts.ajouterContact(contact2);
+        gestionnaireContacts.ajouterContact(contact3);
+        gestionnaireContacts.ajouterContact(contact4);
+
+        gestionnaireContacts.afficherContacts();
+        System.out.println();
+
+        gestionnaireContacts.rechercherContact("Bob");
+        System.out.println();
+        gestionnaireContacts.rechercherContact("Macdo");
+        System.out.println();
+
+        gestionnaireContacts.supprimerContact("Tim Hortons");
+        System.out.println();
+        gestionnaireContacts.afficherContacts();
+
+
+
+
+    }
 }
