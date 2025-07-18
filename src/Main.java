@@ -1,5 +1,8 @@
 import poo1.Bibliotheque;
 import poo1.Livre;
+import poo2.Equipe;
+import poo2.Joueur;
+import poo2.Poste;
 import tableaux.*;
 
 public class Main {
@@ -35,8 +38,10 @@ public class Main {
 
         // EXERCICE - SEMAINE 2
         // Exercice 1 - Bibliothèque et livres
-        exo1smn2();
+        //exo1smn2();
 
+        // Exercice 2 - Bibliothèque et livres
+        exo2smn2();
     }
 
     public static void exo1smn2() {
@@ -70,5 +75,33 @@ public class Main {
 
     }
 
+    public static void exo2smn2() {
+
+        Joueur joueur1 = new Joueur("Messi", Poste.MILIEU, 10, 4);
+        Joueur joueur2 = new Joueur("Ronaldo", Poste.ATTAQUE, 7, 5);
+        Joueur joueur3 = new Joueur("Mbappé", Poste.ATTAQUE, 7,7);
+        Joueur joueur4 = new Joueur("De Bruyne", Poste.MILIEU, 17,2);
+        Joueur joueur5 = new Joueur("Haaland", Poste.ATTAQUE, 9,5);
+        Joueur joueur6 = new Joueur("Van Dijk", Poste.DEFENSE, 4,7);
+
+        Equipe equipe1 = new Equipe("DreamTeam");
+
+
+        equipe1.ajouterJoueur(joueur1);
+        equipe1.ajouterJoueur(joueur2);
+        equipe1.ajouterJoueur(joueur3);
+        equipe1.ajouterJoueur(joueur4);
+        equipe1.ajouterJoueur(joueur5);
+        equipe1.ajouterJoueur(joueur6);
+
+
+        System.out.println(equipe1.afficherMoyennePerformance());
+
+        System.out.println(equipe1.trouverMeilleurJoueur().getNom());
+
+        equipe1.afficherPoste(Poste.ATTAQUE);
+        equipe1.afficherPoste(Poste.DEFENSE);
+
+    }
 
 }
