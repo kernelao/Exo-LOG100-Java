@@ -3,6 +3,7 @@ import poo2.*;
 import poo3.*;
 import poo4.*;
 import poo5.*;
+import poo6.*;
 import tableaux.*;
 
 public class Main {
@@ -48,7 +49,11 @@ public class Main {
         // Exercice 1 - Gestion d'une bibliothèque
         //exo1smn3();
         // Exercice 2 - Gestionnaire de contacts
-        exo2smn3();
+        //exo2smn3();
+        // Exercice 3 - Gestionnaire de produits
+        //exo3smn3();
+        // Exercice 4 - Gestion de livres
+        //exo4smn3();
 
     }
 
@@ -198,4 +203,32 @@ public class Main {
 
 
     }
+    public static void exo3smn3() {
+
+        Panier monPanier = new Panier();
+
+        Produit produit1 = new ProduitNumerique("Formation", 299, "10 MB", "Fichier PDF");
+        Produit produit2 = new ProduitNumerique("Coaching", 899, "0 MB", "Appel vidéo");
+        Produit produit3 = new ProduitPhysique("Macbook", 1099, 200, "14x9x7");
+        Produit produit4 = new ProduitPhysique("iPad", 799, 100, "10x2x3");
+
+        monPanier.ajouterProduit(produit1);
+        monPanier.ajouterProduit(produit2);
+        monPanier.ajouterProduit(produit3);
+        monPanier.ajouterProduit(produit4);
+
+        monPanier.afficherContenu();
+        System.out.println();
+        System.out.println("Le total du panier : " + monPanier.calculerTotal() + "$");
+
+
+    }
+    public static void exo4smn3() {
+
+
+
+
+    }
+
+
 }
