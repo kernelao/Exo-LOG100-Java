@@ -1,3 +1,5 @@
+import poo1.Bibliotheque;
+import poo1.Livre;
 import tableaux.*;
 
 public class Main {
@@ -29,6 +31,44 @@ public class Main {
         //SommationMatrices.lancer();
 
         // Exercice 3G - Sommation lignes/colonnes tableau 2D
-        SommationLignesColonnes.lancer();
+        //SommationLignesColonnes.lancer();
+
+        // EXERCICE - SEMAINE 2
+        // Exercice 1 - Bibliothèque et livres
+        exo1smn2();
+
     }
+
+    public static void exo1smn2() {
+
+        Livre livre1 = new Livre("Père riche, père pauvre", "Robert Kiyosaki", 1997);
+        Livre livre2 = new Livre("La semaine de 4 heures", "Timothy Ferriss", 2007);
+        Livre livre3 = new Livre("L'homme le plus riche de Babylone", "George S. Clason", 1926);
+        Livre livre4 = new Livre("Réfléchissez et devenez riche", "Napoleon Hill", 1937);
+        Livre livre5 = new Livre("L'autoroute du millionnaire", "MJ DeMarco", 2011);
+
+        Bibliotheque biblio = new Bibliotheque();
+
+        System.out.println("Disponibilité :");
+        biblio.ajouterLivre(livre1);
+        biblio.ajouterLivre(livre2);
+        biblio.ajouterLivre(livre3);
+        biblio.ajouterLivre(livre4);
+        biblio.ajouterLivre(livre5);
+
+        biblio.afficherLivresDisponibles();
+        System.out.println();
+
+        Livre livre6 = new Livre("L'autoroute du millionnaire", "Xyz", 2011);
+        biblio.ajouterLivre(livre6);
+
+        System.out.println();
+        livre3.setDisponible(false);
+        livre4.setDisponible(false);
+        biblio.afficherLivresDisponibles();
+
+
+    }
+
+
 }
