@@ -4,8 +4,11 @@ import poo3.*;
 import poo4.*;
 import poo5.*;
 import poo6.*;
+import poo7.*;
+import poo8.*;
 import tableaux.*;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -55,7 +58,9 @@ public class Main {
         // Exercice 3 - Gestionnaire de produits
         //exo3smn3();
         // Exercice 4 - Gestion de livres (programme interactif)
-        exo4smn3();
+        //exo4smn3();
+        // Exercice 5 - Système de gestion d'étudiants
+        exo5smn3();
 
     }
 
@@ -67,7 +72,7 @@ public class Main {
         poo1.Livre livre4 = new poo1.Livre("Réfléchissez et devenez riche", "Napoleon Hill", 1937);
         poo1.Livre livre5 = new poo1.Livre("L'autoroute du millionnaire", "MJ DeMarco", 2011);
 
-        Bibliotheque biblio = new Bibliotheque();
+        poo1.Bibliotheque biblio = new poo1.Bibliotheque();
 
         System.out.println("Disponibilité :");
         biblio.ajouterLivre(livre1);
@@ -268,11 +273,65 @@ public class Main {
                 case "c":
                     System.out.println("Voici tous les livres enregistrés dans la bibliothèque : ");
                     maBibliotheque.afficherTousLivres();
+                    break;
             }
 
         } while (!choix.equals(optionQuitter));
 
     }
+    public static void exo5smn3() {
 
+        Scanner clavier = new Scanner(System.in);
+        ListeEtudiants listeEtudiants = new ListeEtudiants();
+        String optionQuitter = "q";
+        String choix;
+
+        do {
+            System.out.println("Choisissez une option -->\n'a' : pour ajouter un étudiant à la liste\n'b' : pour rechercher un étudiant dans la liste\n'c' : pour afficher tous les étudiants de la liste\n'd' : pour modifier le détail d'un étudiants de la liste\n'e' : pour supprimer un étudiant de la liste\n'q' : pour quitter le programme");
+            choix = clavier.nextLine();
+
+            switch (choix) {
+                case "a":
+                    System.out.print("Entrez le nom de l'étudiant à ajouter à la liste :");
+                    String nom = clavier.nextLine();
+                    System.out.print("Entrez le prénom de l'étudiant (" + nom + ") à ajouter à la liste :");
+                    String prenom = clavier.nextLine();
+                    System.out.print("Entrez l'age de l'étudiant (" + nom + ") à ajouter à la liste :");
+                    int age = clavier.nextInt();
+                    clavier.nextLine();
+                    System.out.print("Entrez la spécialité de l'étudiant (" + nom + ") à ajouter à la liste :");
+                    String specialite = clavier.nextLine();
+                    Etudiant etudiant = new Etudiant(nom, prenom, age, specialite);
+                    listeEtudiants.ajouterEtudiant(etudiant);
+                    break;
+                case "b":
+                    System.out.print("Voulez-vous faire une recherche par nom d'étudiant (n) ou par spécialité (v) ? : ");
+                    String recherche = clavier.nextLine();
+                    switch (recherche) {
+                        case "n":
+                            System.out.print("Entrez le nom du l'étudiant à rechercher à la liste :");
+                            String nomRecherche = clavier.nextLine();
+                            listeEtudiants.rechercherEtudiantParNom(nomRecherche);
+                            break;
+                        case "v":
+                            System.out.print("Entrez la spécialité de l'étudiant à rechercher à la liste :");
+                            String specialiteRecherche = clavier.nextLine();
+                            listeEtudiants.rechercherEtudiantParSpecialite(specialiteRecherche);
+                            break;
+                    }
+                case "c":
+                    System.out.println("Voici tous les étudiants enregistrés dans la liste : ");
+                    listeEtudiants.afficherEtudiants();
+                    break;
+                case "d":
+                    System.out.println("Avant de modifier les détails de l'étudiant...");
+                    ListeEtudiants.modifierDetailsEtudiant(ListeEtudiants.recupererEtudiant());
+                    break;
+                case "e":
+                    System.out.println("Avant de supprimer les détails de l'étudiant...");
+                    ListeEtudiants.supprimerEtudiant(ListeEtudiants.recupererEtudiant());
+            }
+        } while (!choix.equals(optionQuitter));
+    }
 
 }
