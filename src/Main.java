@@ -6,6 +6,8 @@ import poo5.*;
 import poo6.*;
 import tableaux.*;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -52,8 +54,8 @@ public class Main {
         //exo2smn3();
         // Exercice 3 - Gestionnaire de produits
         //exo3smn3();
-        // Exercice 4 - Gestion de livres
-        //exo4smn3();
+        // Exercice 4 - Gestion de livres (programme interactif)
+        exo4smn3();
 
     }
 
@@ -225,8 +227,50 @@ public class Main {
     }
     public static void exo4smn3() {
 
+        Scanner clavier = new Scanner(System.in);
+        poo7.Bibliotheque maBibliotheque = new poo7.Bibliotheque();
+        String optionQuitter = "d";
+        String choix;
 
+        do {
 
+            System.out.println("Choisissez une option -->\n'a' : pour ajouter un livre\n'b' : pour rechercher un livre\n'c' : pour afficher tous les livres de la bibliothèque\n'd' : pour quitter le programme");
+            choix = clavier.nextLine();
+
+            switch (choix) {
+                case "a":
+                    System.out.print("Entrez le titre du livre à ajouter à la bibliothèque :");
+                    String titre = clavier.nextLine();
+                    System.out.print("Entrez l'auteur du livre (" + titre + ") à ajouter à la bibliothèque :");
+                    String auteur = clavier.nextLine();
+                    System.out.print("Entrez l'année de publication du livre (" + titre + ") à ajouter à la bibliothèque :");
+                    int annee = clavier.nextInt();
+                    clavier.nextLine();
+                    poo7.Livre livre = new poo7.Livre(titre, auteur, annee);
+                    maBibliotheque.ajouterLivre(livre);
+                    break;
+                case "b":
+                    System.out.print("Voulez-vous faire une recherche par titre (t) ou par auteur (v) ? : ");
+                    String recherche = clavier.nextLine();
+                    switch (recherche) {
+                        case "t":
+                            System.out.print("Entrez le titre du livre à rechercher à la bibliothèque :");
+                            String titreRecherche = clavier.nextLine();
+                            maBibliotheque.rechercherLivreParTitre(titreRecherche);
+                            break;
+                        case "v":
+                            System.out.print("Entrez l'auteur du livre à rechercher à la bibliothèque :");
+                            String auteurRecherche = clavier.nextLine();
+                            maBibliotheque.rechercherLivreParAuteur(auteurRecherche);
+                            break;
+                    }
+                    break;
+                case "c":
+                    System.out.println("Voici tous les livres enregistrés dans la bibliothèque : ");
+                    maBibliotheque.afficherTousLivres();
+            }
+
+        } while (!choix.equals(optionQuitter));
 
     }
 
