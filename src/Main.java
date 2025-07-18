@@ -1,6 +1,7 @@
 import poo1.*;
 import poo2.*;
 import poo3.*;
+import poo4.*;
 import tableaux.*;
 
 public class Main {
@@ -37,21 +38,24 @@ public class Main {
         // EXERCICE - SEMAINE 2
         // Exercice 1 - Bibliothèque et livres
         //exo1smn2();
-
         // Exercice 2 - Gestion d'une équipe de sport
         //exo2smn2();
-
         // Exercice 3 - Simulateur de véhicules
-        exo3smn2();
+        //exo3smn2();
+
+        // EXERCICE - SEMAINE 3
+        // Exercice 1 - Gestion d'une bibliothèque
+        exo1smn3();
+
     }
 
     public static void exo1smn2() {
 
-        Livre livre1 = new Livre("Père riche, père pauvre", "Robert Kiyosaki", 1997);
-        Livre livre2 = new Livre("La semaine de 4 heures", "Timothy Ferriss", 2007);
-        Livre livre3 = new Livre("L'homme le plus riche de Babylone", "George S. Clason", 1926);
-        Livre livre4 = new Livre("Réfléchissez et devenez riche", "Napoleon Hill", 1937);
-        Livre livre5 = new Livre("L'autoroute du millionnaire", "MJ DeMarco", 2011);
+        poo1.Livre livre1 = new poo1.Livre("Père riche, père pauvre", "Robert Kiyosaki", 1997);
+        poo1.Livre livre2 = new poo1.Livre("La semaine de 4 heures", "Timothy Ferriss", 2007);
+        poo1.Livre livre3 = new poo1.Livre("L'homme le plus riche de Babylone", "George S. Clason", 1926);
+        poo1.Livre livre4 = new poo1.Livre("Réfléchissez et devenez riche", "Napoleon Hill", 1937);
+        poo1.Livre livre5 = new poo1.Livre("L'autoroute du millionnaire", "MJ DeMarco", 2011);
 
         Bibliotheque biblio = new Bibliotheque();
 
@@ -65,7 +69,7 @@ public class Main {
         biblio.afficherLivresDisponibles();
         System.out.println();
 
-        Livre livre6 = new Livre("L'autoroute du millionnaire", "Xyz", 2011);
+        poo1.Livre livre6 = new poo1.Livre("L'autoroute du millionnaire", "Xyz", 2011);
         biblio.ajouterLivre(livre6);
 
         System.out.println();
@@ -75,7 +79,6 @@ public class Main {
 
 
     }
-
     public static void exo2smn2() {
 
         Joueur joueur1 = new Joueur("Messi", Poste.MILIEU, 10, 4);
@@ -104,7 +107,6 @@ public class Main {
         equipe1.afficherPoste(Poste.DEFENSE);
 
     }
-
     public static void exo3smn2() {
 
 
@@ -147,6 +149,21 @@ public class Main {
 
         System.out.println("Plus rapide entre la Toyota et la Hyundai ?");
         Vehicule.afficherEtat(voiture3.comparer(voiture4));
+
+    }
+
+    public static void exo1smn3() {
+
+        Document livre1 = new poo4.Livre("Livre1", "Auteur1", 2000, Genre.BIOGRAPHIE, 289);
+        poo4.Livre livre2 = new poo4.Livre("Livre2", "Auteur2", 2010, Genre.ESSAI, 344);
+        Document magazine1 = new Magazine("Magazine 1", "Auteur3", 2011, 1, "L'été");
+        Magazine magazine2 = new Magazine("Magazine 2", "Auteur4", 2008, 2, "L'hiver");
+
+        livre1.afficherDetail();
+        magazine1.afficherDetail();
+        livre2.afficherDetail();
+        magazine2.afficherDetail();
+
 
     }
 
