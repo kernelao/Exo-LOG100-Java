@@ -1,8 +1,6 @@
-import poo1.Bibliotheque;
-import poo1.Livre;
-import poo2.Equipe;
-import poo2.Joueur;
-import poo2.Poste;
+import poo1.*;
+import poo2.*;
+import poo3.*;
 import tableaux.*;
 
 public class Main {
@@ -40,8 +38,11 @@ public class Main {
         // Exercice 1 - Bibliothèque et livres
         //exo1smn2();
 
-        // Exercice 2 - Bibliothèque et livres
-        exo2smn2();
+        // Exercice 2 - Gestion d'une équipe de sport
+        //exo2smn2();
+
+        // Exercice 3 - Simulateur de véhicules
+        exo3smn2();
     }
 
     public static void exo1smn2() {
@@ -101,6 +102,51 @@ public class Main {
 
         equipe1.afficherPoste(Poste.ATTAQUE);
         equipe1.afficherPoste(Poste.DEFENSE);
+
+    }
+
+    public static void exo3smn2() {
+
+
+        Moteur moteur1 = new Moteur("Essence", 100);
+        Moteur moteur2 = new Moteur("Diesel", 80);
+
+        Vehicule voiture1 = new Vehicule("Ford", "Taurus", moteur1);
+        Vehicule voiture2 = new Vehicule("Nissan", "Altima", moteur2);
+        Vehicule voiture3 = new Vehicule("Toyota", "Corrola", moteur1);
+        Vehicule voiture4 = new Vehicule("Hyundai", "Elantra", moteur2);
+
+        System.out.println("État 1 :");
+        Vehicule.afficherEtat(voiture1);
+        Vehicule.afficherEtat(voiture2);
+        Vehicule.afficherEtat(voiture3);
+        Vehicule.afficherEtat(voiture4);
+
+        System.out.println("État 2 :");
+        voiture1.accelerer();
+        voiture2.accelerer();
+        voiture3.accelerer();
+        voiture4.accelerer();
+        Vehicule.afficherEtat(voiture1);
+        Vehicule.afficherEtat(voiture2);
+        Vehicule.afficherEtat(voiture3);
+        Vehicule.afficherEtat(voiture4);
+
+        System.out.println("État 3 :");
+        voiture1.freiner();
+        voiture2.freiner();
+        voiture3.freiner();
+        voiture4.freiner();
+        Vehicule.afficherEtat(voiture1);
+        Vehicule.afficherEtat(voiture2);
+        Vehicule.afficherEtat(voiture3);
+        Vehicule.afficherEtat(voiture4);
+
+        System.out.println("Plus rapide entre la Ford et la Nissan ?");
+        Vehicule.afficherEtat(voiture1.comparer(voiture2));
+
+        System.out.println("Plus rapide entre la Toyota et la Hyundai ?");
+        Vehicule.afficherEtat(voiture3.comparer(voiture4));
 
     }
 
