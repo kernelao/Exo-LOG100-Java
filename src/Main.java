@@ -233,7 +233,6 @@ public class Main {
         String choix;
 
         do {
-
             System.out.println("Choisissez une option -->\n'a' : pour ajouter un livre\n'b' : pour rechercher un livre\n'c' : pour afficher tous les livres de la bibliothèque\n'd' : pour quitter le programme");
             choix = clavier.nextLine();
 
@@ -269,10 +268,7 @@ public class Main {
                     System.out.println("Voici tous les livres enregistrés dans la bibliothèque : ");
                     maBibliotheque.afficherTousLivres();
             }
-
         } while (!choix.equals(optionQuitter));
-
     }
-
 
 }
