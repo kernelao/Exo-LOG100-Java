@@ -49,20 +49,22 @@ public class Main {
 
         Bibliotheque biblio = new Bibliotheque();
 
-        System.out.println("Disponibilité :");
         biblio.ajouterLivre(livre1);
         biblio.ajouterLivre(livre2);
         biblio.ajouterLivre(livre3);
         biblio.ajouterLivre(livre4);
         biblio.ajouterLivre(livre5);
 
+        System.out.println("Disponibilité :");
         biblio.afficherLivresDisponibles();
         System.out.println();
 
-        Livre livre6 = new Livre("L'autoroute du millionnaire", "Xyz", 2011);
+        System.out.println("Ajout :");
+        Livre livre6 = new Livre("La semaine de 4 heures", "MJ DeMarco", 2011);
         biblio.ajouterLivre(livre6);
-
         System.out.println();
+
+        System.out.println("Disponibilité :");
         livre3.setDisponible(false);
         livre4.setDisponible(false);
         biblio.afficherLivresDisponibles();
