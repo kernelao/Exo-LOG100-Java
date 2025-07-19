@@ -51,7 +51,7 @@ public class Main {
         // Exercice 2 - Gestionnaire de contacts
         //exo2smn3();
         // Exercice 3 - Gestionnaire de produits
-        //exo3smn3();
+        exo3smn3();
         // Exercice 4 - Gestion de livres
         //exo4smn3();
 
