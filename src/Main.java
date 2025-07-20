@@ -1,4 +1,5 @@
 import exo_supp_1.ConvertisseurTemperature;
+import exo_supp_1.VolumeCylindre;
 import poo1.*;
 import poo2.*;
 import poo3.*;
@@ -65,7 +66,10 @@ public class Main {
 
         // Exo supp - semaine 03
         // Exo 1 :
-        ConvertisseurTemperature.lancer();
+        //ConvertisseurTemperature.lancer();
+
+        // Exo 2 :
+        VolumeCylindre.lancer();
 
     }
 
