@@ -1,3 +1,4 @@
+import exo_supp_1.ConvertisseurTemperature;
 import poo1.*;
 import poo2.*;
 import poo3.*;
@@ -60,7 +61,11 @@ public class Main {
         // Exercice 4 - Gestion de livres (programme interactif)
         //exo4smn3();
         // Exercice 5 - Système de gestion d'étudiants
-        exo5smn3();
+        //exo5smn3();
+
+        // Exo supp - semaine 03
+        // Exo 1 :
+        ConvertisseurTemperature.lancer();
 
     }
 
@@ -168,7 +173,6 @@ public class Main {
     }
 
     public static void exo1smn3() {
-
         Document livre1 = new poo4.Livre("Livre1", "Auteur1", 2000, Genre.BIOGRAPHIE, 289);
         poo4.Livre livre2 = new poo4.Livre("Livre2", "Auteur2", 2010, Genre.ESSAI, 344);
         Document magazine1 = new Magazine("Magazine 1", "Auteur3", 2011, 1, "L'été");
@@ -178,8 +182,6 @@ public class Main {
         magazine1.afficherDetail();
         livre2.afficherDetail();
         magazine2.afficherDetail();
-
-
     }
     public static void exo2smn3() {
 
