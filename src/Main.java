@@ -9,7 +9,9 @@ import poo6.*;
 import poo7.*;
 import poo8.*;
 import tableaux.*;
+import serie_1_1.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -69,8 +71,10 @@ public class Main {
         //ConvertisseurTemperature.lancer();
 
         // Exo 2 :
-        VolumeCylindre.lancer();
+        //VolumeCylindre.lancer();
 
+        // Semaine 4 - Exo 1
+        smn4exo1();
     }
 
     public static void exo1smn2() {
@@ -340,4 +344,22 @@ public class Main {
         } while (!choix.equals(optionQuitter));
     }
 
+    public static void smn4exo1() {
+
+        ArrayList<Forme> listeForme = new ArrayList<>();
+        listeForme.add(new Cercle(5d));
+        listeForme.add(new Cercle(6.33d));
+        listeForme.add(new Cercle(22d));
+        listeForme.add(new Cercle(0.4d));
+        listeForme.add(new Cercle(2.54d));
+        listeForme.add(new Rectangle(4d, 7d));
+        listeForme.add(new Rectangle(3.2d, 3d));
+        listeForme.add(new Rectangle(4d, 8d));
+        listeForme.add(new Rectangle(5.3d, 12d));
+        listeForme.add(new Rectangle(6.0d, 3.54d));
+        System.out.println("Attendu pour le premier : Aire = 78.54, Périmètre = 31.42");
+        for (Forme forme : listeForme) {
+            System.out.println("Aire = " + forme.calculerAire() + "\tPérimètre = " + forme.calculerPerimetre());
+        }
+    }
 }
