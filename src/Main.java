@@ -10,6 +10,7 @@ import poo7.*;
 import poo8.*;
 import tableaux.*;
 import serie_1_1.*;
+import serie_1_2.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,7 +75,9 @@ public class Main {
         //VolumeCylindre.lancer();
 
         // Semaine 4 - Exo 1
-        smn4exo1();
+        //smn4exo1();
+        // Semaine 4 - Exo 2
+        smn4exo2();
     }
 
     public static void exo1smn2() {
@@ -141,42 +144,42 @@ public class Main {
         Moteur moteur1 = new Moteur("Essence", 100);
         Moteur moteur2 = new Moteur("Diesel", 80);
 
-        Vehicule voiture1 = new Vehicule("Ford", "Taurus", moteur1);
-        Vehicule voiture2 = new Vehicule("Nissan", "Altima", moteur2);
-        Vehicule voiture3 = new Vehicule("Toyota", "Corrola", moteur1);
-        Vehicule voiture4 = new Vehicule("Hyundai", "Elantra", moteur2);
+        poo3.Vehicule voiture1 = new poo3.Vehicule("Ford", "Taurus", moteur1);
+        poo3.Vehicule voiture2 = new poo3.Vehicule("Nissan", "Altima", moteur2);
+        poo3.Vehicule voiture3 = new poo3.Vehicule("Toyota", "Corrola", moteur1);
+        poo3.Vehicule voiture4 = new poo3.Vehicule("Hyundai", "Elantra", moteur2);
 
         System.out.println("État 1 :");
-        Vehicule.afficherEtat(voiture1);
-        Vehicule.afficherEtat(voiture2);
-        Vehicule.afficherEtat(voiture3);
-        Vehicule.afficherEtat(voiture4);
+        poo3.Vehicule.afficherEtat(voiture1);
+        poo3.Vehicule.afficherEtat(voiture2);
+        poo3.Vehicule.afficherEtat(voiture3);
+        poo3.Vehicule.afficherEtat(voiture4);
 
         System.out.println("État 2 :");
         voiture1.accelerer();
         voiture2.accelerer();
         voiture3.accelerer();
         voiture4.accelerer();
-        Vehicule.afficherEtat(voiture1);
-        Vehicule.afficherEtat(voiture2);
-        Vehicule.afficherEtat(voiture3);
-        Vehicule.afficherEtat(voiture4);
+        poo3.Vehicule.afficherEtat(voiture1);
+        poo3.Vehicule.afficherEtat(voiture2);
+        poo3.Vehicule.afficherEtat(voiture3);
+        poo3.Vehicule.afficherEtat(voiture4);
 
         System.out.println("État 3 :");
         voiture1.freiner();
         voiture2.freiner();
         voiture3.freiner();
         voiture4.freiner();
-        Vehicule.afficherEtat(voiture1);
-        Vehicule.afficherEtat(voiture2);
-        Vehicule.afficherEtat(voiture3);
-        Vehicule.afficherEtat(voiture4);
+        poo3.Vehicule.afficherEtat(voiture1);
+        poo3.Vehicule.afficherEtat(voiture2);
+        poo3.Vehicule.afficherEtat(voiture3);
+        poo3.Vehicule.afficherEtat(voiture4);
 
         System.out.println("Plus rapide entre la Ford et la Nissan ?");
-        Vehicule.afficherEtat(voiture1.comparer(voiture2));
+        poo3.Vehicule.afficherEtat(voiture1.comparer(voiture2));
 
         System.out.println("Plus rapide entre la Toyota et la Hyundai ?");
-        Vehicule.afficherEtat(voiture3.comparer(voiture4));
+        poo3.Vehicule.afficherEtat(voiture3.comparer(voiture4));
 
     }
 
@@ -360,6 +363,19 @@ public class Main {
         System.out.println("Attendu pour le premier : Aire = 78.54, Périmètre = 31.42");
         for (Forme forme : listeForme) {
             System.out.println("Aire = " + forme.calculerAire() + "\tPérimètre = " + forme.calculerPerimetre());
+        }
+    }
+    public static void smn4exo2() {
+
+        ArrayList<serie_1_2.Vehicule> listeVehicule = new ArrayList<>();
+        listeVehicule.add(new Voiture(180,4));
+        listeVehicule.add(new Avion(10000,180));
+        listeVehicule.add(new Bateau(500,30));
+        for (serie_1_2.Vehicule veh : listeVehicule) {
+            veh.seDeplacer();
+            System.out.print(" ");
+            veh.afficherInfos();
+            System.out.println();
         }
     }
 }
