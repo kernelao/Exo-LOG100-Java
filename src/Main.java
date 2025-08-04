@@ -11,6 +11,7 @@ import poo8.*;
 import tableaux.*;
 import serie_1_1.*;
 import serie_1_2.*;
+import serie_1_3.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,9 @@ public class Main {
         // Semaine 4 - Exo 1
         //smn4exo1();
         // Semaine 4 - Exo 2
-        smn4exo2();
+        //smn4exo2();
+        // Semaine 4 - Exo 3
+        //smn4exo3();
     }
 
     public static void exo1smn2() {
@@ -376,6 +379,16 @@ public class Main {
             System.out.print(" ");
             veh.afficherInfos();
             System.out.println();
+        }
+    }
+    public static void smn4exo3() {
+
+        ArrayList<Paiement> listePaiements = new ArrayList<>();
+        listePaiements.add(new PaiementCarteCredit("1173141412341234","John"));
+        listePaiements.add(new PaiementPayPal("john.doe@example.com"));
+        listePaiements.add(new PaiementVirement("12345678","XYZ"));
+        for (Paiement p : listePaiements) {
+            p.effectuerPaiement(100d);
         }
     }
 }
