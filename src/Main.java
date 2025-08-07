@@ -18,6 +18,7 @@ import serie_1_2.*;
 import serie_1_3.*;
 import serie_1_4.*;
 import serie_1_5.*;
+import serie_1_6.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +92,8 @@ public class Main {
         //smn4exo4();
         // Semaine 4 - Exo 5
         //smn4exo5();
-
+        // Semaine 4 - Exo 6
+        smn4exo6();
 
 
 
@@ -439,4 +441,21 @@ public class Main {
             attaquant.attaquer();
         }
     }
+    public static void smn4exo6() {
+        List<Mammifere> listeMammifere = new ArrayList<>();
+        Chat chat1 = new Chat();
+        Chien chien1 = new Chien();
+        Chat chat2 = new Chat();
+        Chien chien2 = new Chien();
+        listeMammifere.add(chien1);
+        listeMammifere.add(chien2);
+        listeMammifere.add(chat1);
+        listeMammifere.add(chat2);
+        for (Mammifere m : listeMammifere) {
+            m.manger();
+            m.dormir();
+            m.seDeplacer();
+        }
+    }
+
 }
