@@ -10,11 +10,14 @@ import poo7.*;
 import poo8.*;
 import serie_1_4.Avion;
 import serie_1_4.Voiture;
+import serie_1_5.Attaquant;
+import serie_1_5.Guerrier;
 import tableaux.*;
 import serie_1_1.*;
 import serie_1_2.*;
 import serie_1_3.*;
 import serie_1_4.*;
+import serie_1_5.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +88,10 @@ public class Main {
         // Semaine 4 - Exo 3
         //smn4exo3();
         // Semaine 4 - Exo 4
-        smn4exo4();
+        //smn4exo4();
+        // Semaine 4 - Exo 5
+        //smn4exo5();
+
 
 
 
@@ -423,5 +429,14 @@ public class Main {
 
 
 
+    }
+    public static void smn4exo5() {
+        List<Attaquant> equipe = new ArrayList<>();
+        equipe.add(new Guerrier());
+        equipe.add(new Archer());
+        equipe.add(new Magicien());
+        for (Attaquant attaquant : equipe) {
+            attaquant.attaquer();
+        }
     }
 }
