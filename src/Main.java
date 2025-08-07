@@ -19,6 +19,7 @@ import serie_1_3.*;
 import serie_1_4.*;
 import serie_1_5.*;
 import serie_1_6.*;
+import serie_1_7.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,7 +94,9 @@ public class Main {
         // Semaine 4 - Exo 5
         //smn4exo5();
         // Semaine 4 - Exo 6
-        smn4exo6();
+        //smn4exo6();
+        // Semaine 4 - Exo 6
+        smn4exo7();
 
 
 
@@ -390,7 +393,7 @@ public class Main {
         ArrayList<serie_1_2.Vehicule> listeVehicule = new ArrayList<>();
         listeVehicule.add(new serie_1_2.Voiture(180,4));
         listeVehicule.add(new serie_1_2.Avion(10000,180));
-        listeVehicule.add(new Bateau(500,30));
+        listeVehicule.add(new serie_1_2.Bateau(500,30));
         for (serie_1_2.Vehicule veh : listeVehicule) {
             veh.seDeplacer();
             System.out.print(" ");
@@ -415,7 +418,7 @@ public class Main {
 
         Voiture voiture = new Voiture();
         Avion avion = new Avion();
-        Amphibie amphibie = new Amphibie();
+        serie_1_4.Amphibie amphibie = new serie_1_4.Amphibie();
 
         objetsRoulant.add(voiture);
         objetsRoulant.add(amphibie);
@@ -457,5 +460,26 @@ public class Main {
             m.seDeplacer();
         }
     }
+    public static void smn4exo7() {
 
+        serie_1_7.Voiture voiture2 = new serie_1_7.Voiture();
+        serie_1_7.Bateau bateau2 = new serie_1_7.Bateau();
+        serie_1_7.Amphibie amphibie = new serie_1_7.Amphibie();
+
+        List<VehiculeTerrestre> vehiculeTerrestre = new ArrayList<>();
+        List<VehiculeAquatique> vehiculeAquatiques = new ArrayList<>();
+        vehiculeTerrestre.add(voiture2);
+        vehiculeTerrestre.add(amphibie);
+        vehiculeAquatiques.add(bateau2);
+        vehiculeAquatiques.add(amphibie);
+
+        for (VehiculeTerrestre v : vehiculeTerrestre) {
+            v.rouler();
+        }
+        for (VehiculeAquatique a : vehiculeAquatiques) {
+            a.naviguer();
+        }
+
+
+    }
 }
