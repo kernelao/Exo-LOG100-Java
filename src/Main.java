@@ -8,10 +8,13 @@ import poo5.*;
 import poo6.*;
 import poo7.*;
 import poo8.*;
+import serie_1_4.Avion;
+import serie_1_4.Voiture;
 import tableaux.*;
 import serie_1_1.*;
 import serie_1_2.*;
 import serie_1_3.*;
+import serie_1_4.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +84,12 @@ public class Main {
         //smn4exo2();
         // Semaine 4 - Exo 3
         //smn4exo3();
+        // Semaine 4 - Exo 4
+        smn4exo4();
+
+
+
+
     }
 
     public static void exo1smn2() {
@@ -371,8 +380,8 @@ public class Main {
     public static void smn4exo2() {
 
         ArrayList<serie_1_2.Vehicule> listeVehicule = new ArrayList<>();
-        listeVehicule.add(new Voiture(180,4));
-        listeVehicule.add(new Avion(10000,180));
+        listeVehicule.add(new serie_1_2.Voiture(180,4));
+        listeVehicule.add(new serie_1_2.Avion(10000,180));
         listeVehicule.add(new Bateau(500,30));
         for (serie_1_2.Vehicule veh : listeVehicule) {
             veh.seDeplacer();
@@ -390,5 +399,29 @@ public class Main {
         for (Paiement p : listePaiements) {
             p.effectuerPaiement(100d);
         }
+    }
+    public static void smn4exo4() {
+
+        List<Roulant> objetsRoulant = new ArrayList<>();
+        List<Volant> objetsVolant = new ArrayList<>();
+
+        Voiture voiture = new Voiture();
+        Avion avion = new Avion();
+        Amphibie amphibie = new Amphibie();
+
+        objetsRoulant.add(voiture);
+        objetsRoulant.add(amphibie);
+        objetsVolant.add(avion);
+        objetsVolant.add(amphibie);
+
+        for (Roulant roulant : objetsRoulant) {
+            roulant.rouler();
+        }
+        for (Volant volant : objetsVolant) {
+            volant.voler();
+        }
+
+
+
     }
 }
