@@ -23,10 +23,12 @@ import serie_1_6.*;
 import serie_1_7.*;
 
 import serie_2_1.*;
+import serie_2_2.*;
 
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -104,7 +106,9 @@ public class Main {
         //smn4exo7();
 
         // Semaine 4 - Exo 1
-        smn4exo2_1();
+        //smn4exo2_1();
+        // Semaine 4 - Exo 2
+        smn4exo2_2();
 
 
     }
@@ -515,6 +519,29 @@ public class Main {
         bibliotheque.afficherLivres();
 
 
+
+    }
+    public static void smn4exo2_2() {
+
+        ListEtudiants listeEtudiants = new ListEtudiants();
+        Eleve eleve1 = new Eleve(1, "Jean", 55);
+        Eleve eleve2 = new Eleve(2, "Bob", 77);
+        Eleve eleve3 = new Eleve(3, "Jane", 46);
+        Eleve eleve4 = new Eleve(4, "Carl", 98);
+        Eleve eleve5 = new Eleve(5, "Sarah", 86);
+
+        listeEtudiants.ajouterEtudiant(eleve1);
+        listeEtudiants.ajouterEtudiant(eleve2);
+        listeEtudiants.ajouterEtudiant(eleve3);
+        listeEtudiants.ajouterEtudiant(eleve4);
+        listeEtudiants.ajouterEtudiant(eleve5);
+
+        System.out.println("Liste des étudiants :");
+        listeEtudiants.afficherEtudiants();
+
+        System.out.println("Liste triée des étudiants :");
+        listeEtudiants.trierEtudiants();
+        listeEtudiants.afficherListe();
 
     }
 }
