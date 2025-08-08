@@ -26,6 +26,7 @@ import serie_2_1.*;
 import serie_2_2.*;
 
 import serie_3_1.*;
+import serie_3_2.*;
 
 
 
@@ -113,7 +114,9 @@ public class Main {
         //smn4exo2_2();
 
         // Semaine 4 - Exo 1
-        smn4exo3_1();
+        //smn4exo3_1();
+        // Semaine 4 - Exo 2
+        smn4exo3_2();
 
 
     }
@@ -559,5 +562,12 @@ public class Main {
         meteo.ajouterObservateur(afficheurTemperatures);
 
         meteo.setTemperature(25f);
+    }
+    public static void smn4exo3_2() {
+        Playlist playlist = new Playlist();
+        Utilisateur utilisateur = new Utilisateur();
+        playlist.ajouterObservateur(utilisateur);
+        playlist.ajouterChanson("Shape of You");
+        playlist.ajouterChanson("Bliding Lights");
     }
 }
