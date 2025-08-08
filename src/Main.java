@@ -12,6 +12,7 @@ import serie_1_4.Avion;
 import serie_1_4.Voiture;
 import serie_1_5.Attaquant;
 import serie_1_5.Guerrier;
+import serie_2_1.Bibliotheque;
 import tableaux.*;
 import serie_1_1.*;
 import serie_1_2.*;
@@ -20,6 +21,10 @@ import serie_1_4.*;
 import serie_1_5.*;
 import serie_1_6.*;
 import serie_1_7.*;
+
+import serie_2_1.*;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,10 +100,11 @@ public class Main {
         //smn4exo5();
         // Semaine 4 - Exo 6
         //smn4exo6();
-        // Semaine 4 - Exo 6
-        smn4exo7();
+        // Semaine 4 - Exo 7
+        //smn4exo7();
 
-
+        // Semaine 4 - Exo 1
+        smn4exo2_1();
 
 
     }
@@ -479,6 +485,35 @@ public class Main {
         for (VehiculeAquatique a : vehiculeAquatiques) {
             a.naviguer();
         }
+
+
+    }
+
+    public static void smn4exo2_1() {
+
+        Bibliotheque bibliotheque = new Bibliotheque();
+        serie_2_1.Livre livre1 = new serie_2_1.Livre("1984", "George Orwell", 1949);
+        serie_2_1.Livre livre2 = new serie_2_1.Livre("Le Petit Prince", "Antoine de Saint-Exupéry", 1943);
+        serie_2_1.Livre livre3 = new serie_2_1.Livre("Harry Potter", "J.K. Rowling", 1997);
+
+        bibliotheque.ajouterLivre(livre1);
+        bibliotheque.ajouterLivre(livre2);
+        bibliotheque.ajouterLivre(livre3);
+
+        System.out.println("Liste des livres :");
+        bibliotheque.afficherLivres();
+
+        System.out.println("Liste triée par année de publication :");
+        bibliotheque.trierParAnneePublication();
+        bibliotheque.afficherLivres();
+
+        System.out.println("Recherche du livre \"Harry Potter\" :");
+        bibliotheque.rechercherLivreParTitre("Harry Potter");
+
+        System.out.println("Après suppression :");
+        bibliotheque.supprimerLivreParTitre("Harry Potter");
+        bibliotheque.afficherLivres();
+
 
 
     }
