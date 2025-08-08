@@ -25,6 +25,8 @@ import serie_1_7.*;
 import serie_2_1.*;
 import serie_2_2.*;
 
+import serie_3_1.*;
+
 
 
 import java.util.ArrayList;
@@ -108,7 +110,10 @@ public class Main {
         // Semaine 4 - Exo 1
         //smn4exo2_1();
         // Semaine 4 - Exo 2
-        smn4exo2_2();
+        //smn4exo2_2();
+
+        // Semaine 4 - Exo 1
+        smn4exo3_1();
 
 
     }
@@ -543,5 +548,16 @@ public class Main {
         listeEtudiants.trierEtudiants();
         listeEtudiants.afficherListe();
 
+    }
+    public static void smn4exo3_1() {
+        Meteo meteo = new Meteo();
+
+        AfficheurMeteo afficheurMeteo = new AfficheurMeteo();
+        AfficheurTemperatures afficheurTemperatures = new AfficheurTemperatures();
+
+        meteo.ajouterObservateur(afficheurMeteo);
+        meteo.ajouterObservateur(afficheurTemperatures);
+
+        meteo.setTemperature(25f);
     }
 }
