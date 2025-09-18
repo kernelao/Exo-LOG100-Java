@@ -22,3 +22,22 @@ Projet Java d'exercices de la semaine 1.
 * Transposer une matrice
 * Additionner deux matrices
 * Afficher la somme de chaque ligne et de chaque colonne
+
+# ExoSemaine02
+Projet Java d'exercices de la semaine 2.
+Concerne la POO de base.
+
+### Exercice 1 : Gestion d’une bibliothèque (POO)
+* Implémente une classe `Livre` :
+    * Attributs : titre, auteur, année, disponibilité
+    * Méthodes : getters/setters, disponibilité
+* Implémente une classe `Bibliotheque` :
+    * Contient une liste de livres
+    * Permet d’ajouter un livre (sans doublon de titre)
+    * Permet d’afficher uniquement les livres disponibles
+* Test réalisé avec des livres classiques (Kiyosaki, Ferriss, etc.)
+* Démonstration :
+    * Ajout de livres
+    * Empêche les doublons par titre
+    * Modification de disponibilité
+    * Affichage dynamique des livres disponibles
